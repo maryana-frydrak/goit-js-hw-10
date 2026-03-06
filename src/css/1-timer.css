@@ -1,10 +1,12 @@
 input[type="text"] {
     width: 272px;
     height: 40px;
-    border: 1px solid #333333;
+    border: 1px solid #808080;
     border-radius: 4px;
     margin-top: 36px;
     margin-bottom: 32px;
+    font-size: 16px;
+    outline: none;
 }
 
 input[type="text"]:hover {
@@ -42,6 +44,7 @@ input[type="text"]:disabled {
 .start-btn:disabled {
     background-color: #cfcfcf;
     color: #989898;
+    cursor: not-allowed;
 }
 
 .timer {
