@@ -7,9 +7,6 @@ const form = document.querySelector(".form");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const delayInput = form.elements.delay;
-    const stateInput = form.elements.state;
-
     const delay = Number(e.currentTarget.elements.delay.value);
     const state = e.currentTarget.elements.state.value;
 
@@ -27,10 +24,10 @@ form.addEventListener("submit", (e) => {
     }
 
     createPromise(delay, state)
-        .then(({ delay, value }) => {
+        .then((delay) => {
             iziToast.show({ title: "Ok", message: `✅ Fulfilled promise in ${delay}ms` });
         })
-        .catch(({ delay, value }) => {
+        .catch((delay) => {
             iziToast.show({ title: "Error", message: `❌ Rejected promise in ${delay}ms` });
         });
 })
