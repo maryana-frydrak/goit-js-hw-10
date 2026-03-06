@@ -12,7 +12,7 @@ const timerFields = {
     days: document.querySelector("[data-days]"),
     hours: document.querySelector("[data-hours]"),
     minutes: document.querySelector("[data-minutes]"),
-    seconds: document.querySelector("[seconds]"),
+    seconds: document.querySelector("[data-seconds]"),
 }
 
 let userSelektedDate = null;
@@ -25,8 +25,11 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         userSelektedDate = selectedDates[0];
-        if (userSelektedDate < new Date()) {
-            iziToast.error({ window: alert("Please choose a date in the future") });
+        if (userSelektedDate <= new Date()) {
+            iziToast.error({
+                title: "Error",
+                message: "Please choose a date in the future"
+            });
             startBtn.disabled = true;
         } else {
             startBtn.disabled = false;
