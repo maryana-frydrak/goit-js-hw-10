@@ -28,10 +28,10 @@ form.addEventListener("submit", (e) => {
 
     createPromise(delay, state)
         .then(({ delay, value }) => {
-            iziToast({ title: "Ok", message: `✅ Fulfilled promise in ${delay}ms` });
+            iziToast.show({ title: "Ok", message: `✅ Fulfilled promise in ${delay}ms` });
         })
         .catch(({ delay, value }) => {
-            iziToast({ title: "Error", message: `❌ Rejected promise in ${delay}ms` });
+            iziToast.show({ title: "Error", message: `❌ Rejected promise in ${delay}ms` });
         });
 })
 
